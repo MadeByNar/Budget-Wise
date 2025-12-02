@@ -1,4 +1,4 @@
-/* Make the whole page a flex container */
+/* Make the whole page a flex column */
 html,
 body {
   height: 100%;
@@ -7,19 +7,23 @@ body {
   flex-direction: column;
 }
 
-/* Header stays at the top */
+/* Header */
 header {
-  flex-shrink: 0;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #ffffff;
+  background: #ffffff;
   padding: 0.5rem 1rem;
   display: flex;
-  align-items: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  flex-direction: column; /* ✅ stacks logo + nav */
   z-index: 1000;
+}
+
+.logo-placeholder {
+  padding: 1rem 1rem;
+  display: flex;
+  align-items: center;
 }
 
 .logo-img {
@@ -28,22 +32,61 @@ header {
   object-fit: contain;
 }
 
-/* Main content grows to fill space */
-main.homepage {
-  flex: 1; /* pushes footer down */
-  max-width: 900px;
-  margin: 8rem auto 2rem auto;
-  padding: 2rem;
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 100px; /* sits just below header */
+  left: 0;
+  width: 100%;
+  background: #2e7d32;
+  padding: 0.75rem 0;
+  z-index: 999;
 }
 
-/* Footer pinned at bottom */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #c8e6c9;
+}
+
+.signout-link {
+  color: #ffebee;
+}
+
+.signout-link:hover {
+  color: #ffcdd2;
+}
+
+main {
+  flex: 1;              /* grows to push footer down */
+  margin-top: 180px;    /* space for header + navbar */
+  padding: 2rem;
+}
+
+main.homepage,
+main.dashboard {
+  flex: 1; /* grows to push footer down */
+  margin-top: 180px; /* space for header + navbar */
+  padding: 2rem;
+}
+
 .site-footer {
   flex-shrink: 0;
-  padding: 1rem;
-  background-color: #2e7d32;
-  color: #fff;
+  color: #2e7d32;
   text-align: center;
 }
+

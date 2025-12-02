@@ -1,0 +1,81 @@
+/* Dashboard container */
+.dashboard {
+  max-width: 1000px;
+  margin: 8rem auto 2rem auto; /* space below fixed header */
+  padding: 2rem;
+  background: #fff;
+  border-radius: 10px;
+}
+
+/* Section headings */
+.dashboard h2, .dashboard h3 {
+  color: #2e7d32;
+  margin-bottom: 1rem;
+}
+
+/* Summary cards */
+.summary-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  flex: 1;
+  background: #f5f7fa;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  color: #1b5e20;
+}
+
+.card p {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* Transactions table */
+.transactions table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+.transactions th, .transactions td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.transactions th {
+  background: #2e7d32;
+  color: #fff;
+}
+
+.transactions tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/* Reminders */
+.reminders ul {
+  list-style: none;
+  padding: 0;
+}
+
+.reminders li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.reminders li::before {
+  content: '⏰';
+  position: absolute;
+  left: 0;
+  color: #2e7d32;
+}

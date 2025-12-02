@@ -1,0 +1,18 @@
+<head>
+  <link rel="stylesheet" href="public/css/error.css" />
+</head>
+
+<main class="error-page">
+  <h2>Oops! Something went wrong.</h2>
+
+  {{#if errorCode}}
+    <p class="error-code">Error {{errorCode}}</p>
+  {{/if}}
+
+  {{#if message}}
+    <p class="error-message">{{message}}</p>
+  {{else}}
+    <p class="error-message">We couldn’t process your request. Please try again later.</p>
+  {{/if}}
+
+</main>

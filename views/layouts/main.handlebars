@@ -4,14 +4,25 @@
   <meta charset="UTF-8" />
   <title>BudgetWise</title>
   <link rel="stylesheet" href="/public/css/main.css" />
-  <link rel="stylesheet" href="/public/css/home.css" />
 </head>
 <body>
   <header>
     <div class="logo-placeholder">
       <img src="/public/images/BudgetWiseLogo.png" alt="BudgetWise Logo" class="logo-img" />
     </div>
+    {{#unless isHome}}
+    <nav class="navbar">
+      <ul>
+        <li><a href="/dashboard">Home</a></li>
+        <li><a href="/transactions">Transactions</a></li>
+        <li><a href="/utilities">Utilities</a></li>
+        <li><a href="/reports">Reports</a></li>
+        <li><a href="/" class="signout-link">Sign Out</a></li>
+      </ul>
+    </nav>
+    {{/unless}}
   </header>
+
 
   {{{body}}}
 

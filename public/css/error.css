@@ -1,0 +1,22 @@
+.error-page {
+  max-width: 600px;
+  margin: 8rem auto 2rem auto; /* space below fixed header + navbar */
+  padding: 2rem;
+  text-align: center;
+}
+
+.error-page h2 {
+  color: #c62828;
+  margin-bottom: 1rem;
+}
+
+.error-code {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #b71c1c;
+}
+
+.error-message {
+  margin-bottom: 2rem;
+  color: #444;
+}

@@ -26,6 +26,22 @@ app.set('view engine', 'handlebars');
 
 app.use("/", routes);
 
+app.use((req, res) => {
+  res.status(404).render('error', {
+    errorCode: 404,
+    message: 'Page not found'
+  });
+});
+
+// Example 500 handler
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).render('error', {
+    errorCode: 500,
+    message: 'Internal server error'
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
 });
